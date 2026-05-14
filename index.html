@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Para Você ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      font-family:Arial;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+      ),
+
+      url('https://images.unsplash.com/photo-1518199266791-5375a83190b7');
+
+      background-size:cover;
+      background-position:center;
+
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .hero{
+
+      height:100vh;
+
+      display:flex;
+      flex-direction:column;
+
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      padding:20px;
+    }
+
+    h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    p{
+      font-size:1.3rem;
+      max-width:700px;
+      margin-bottom:30px;
+    }
+
+    button{
+
+      background:#ff4d88;
+      border:none;
+
+      padding:15px 30px;
+
+      border-radius:30px;
+
+      color:white;
+      font-size:1rem;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+    }
+
+    #timer{
+      margin-top:20px;
+      font-size:2rem;
+    }
+
+    .popup{
+
+      position:fixed;
+      inset:0;
+
+      background:rgba(0,0,0,0.8);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .popup-content{
+
+      background:#1f1f35;
+
+      padding:40px;
+
+      border-radius:20px;
+
+      text-align:center;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <h1>Feliz Dia dos Namorados ❤️</h1>
+
+    <p>
+      Mesmo longe,
+      você continua sendo meu lugar favorito.
+    </p>
+
+    <button onclick="abrirSurpresa()">
+      Abrir surpresa 🎁
+    </button>
+
+    <div id="timer"></div>
+
+  </section>
+
+  <div id="popup"
+    class="popup hidden">
+
+    <div class="popup-content">
+
+      <h2>Eu te amo ❤️</h2>
+
+      <p>
+        Obrigado por existir na minha vida.
+      </p>
+
+      <button onclick="fecharSurpresa()">
+        Fechar
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const dataRelacionamento =
+    new Date('2024-01-01');
+
+    function atualizarTimer(){
+
+      const agora = new Date();
+
+      const diferenca =
+      agora - dataRelacionamento;
+
+      const dias =
+      Math.floor(
+      diferenca /
+      (1000*60*60*24)
+      );
+
+      document
+      .getElementById('timer')
+      .innerHTML =
+      `❤️ ${dias} dias juntos ❤️`;
+
+    }
+
+    setInterval(
+    atualizarTimer,
+    1000
+    );
+
+    atualizarTimer();
+
+    function abrirSurpresa(){
+
+      document
+      .getElementById('popup')
+      .classList.remove('hidden');
+
+    }
+
+    function fecharSurpresa(){
+
+      document
+      .getElementById('popup')
+      .classList.add('hidden');
+
+    }
+
+  </script>
+
+</body>
+</html>
